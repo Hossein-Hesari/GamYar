@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گام‌یار | انتخاب مسیر آینده</title>
+    <link rel="icon" href="/static/img/icon.png" type="image/png">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(140deg, #2b2d77, #1b1c3a, #13141a);
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Floating glowing circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: floating 10s ease-in-out infinite alternate;
+            opacity: 0.4;
+            pointer-events: none; /* جلوگیری از کلیک روی دایره‌ها */
+        }
+
+        .c1 {
+            width: 250px;
+            height: 250px;
+            background: #6a5af9;
+            top: 15%;
+            right: 8%;
+        }
+
+        .c2 {
+            width: 200px;
+            height: 200px;
+            background: #4cc9f0;
+            bottom: 15%;
+            left: 8%;
+            animation-delay: 3s;
+        }
+
+        @keyframes floating {
+            from {
+                transform: translateY(0) scale(1);
+            }
+            to {
+                transform: translateY(-30px) scale(1.05);
+            }
+        }
+
+        .hero-box {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 40px 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 1.5s ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+            animation-fill-mode: forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        .hero p:nth-of-type(2) {
+            font-weight: 600;
+            opacity: 0.95;
+            margin-top: 5px;
+        }
+
+        .hero button {
+            margin-top: 25px;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #6a5af9, #3b82f6);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 18px rgba(47, 92, 253, 0.3);
+            font-family: 'Vazirmatn', sans-serif;
+            touch-action: manipulation; /* بهبود لمس روی موبایل */
+        }
+
+        .hero button:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 22px rgba(47, 92, 253, 0.5);
+        }
+
+        .hero button:active {
+            transform: scale(0.98); /* فیدبک لمسی */
+        }
+
+        .promo {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .promo span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== INFO SECTION ===== */
+        .info-section {
+            width: 100%;
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .info-section img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .info-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            opacity: 0.8;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .info-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== FEATURES GRID ===== */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(106, 90, 249, 0.2);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            width: 100%;
+            max-width: 850px;
+            margin: 40px auto 20px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* ===== RESPONSIVE - TABLET ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-box {
+                padding: 35px 20px;
+            }
+
+            .info-section {
+                margin: 50px auto;
+                padding: 25px;
+            }
+
+            .features {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        /* ===== RESPONSIVE - MOBILE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 30px;
+            }
+
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-box {
+                padding: 30px 15px;
+                border-radius: 16px;
+            }
+
+            .hero button {
+                padding: 10px 30px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .promo {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .promo span {
+                font-size: 0.85rem;
+            }
+
+            .info-section {
+                margin: 40px 15px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .info-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .info-section p {
+                font-size: 0.95rem;
+                text-align: right;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+                margin: 30px auto;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .feature-card .icon {
+                font-size: 2rem;
+            }
+
+            .c1 {
+                width: 180px;
+                height: 180px;
+                top: 10%;
+                right: -50px;
+            }
+
+            .c2 {
+                width: 150px;
+                height: 150px;
+                bottom: 10%;
+                left: -40px;
+            }
+        }
+
+        /* ===== RESPONSIVE - SMALL MOBILE ===== */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 20px;
+            }
+
+            .hero {
+                padding: 20px 12px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero p:nth-of-type(2) {
+                font-size: 0.9rem;
+            }
+
+            .hero-box {
+                padding: 25px 12px;
+                border-radius: 14px;
+                margin: 0 5px;
+            }
+
+            .hero button {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                max-width: 250px;
+            }
+
+            .promo span {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+
+            .info-section {
+                margin: 30px 10px;
+                padding: 18px 15px;
+                border-radius: 12px;
+            }
+
+            .info-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .info-section p {
+                font-size: 0.9rem;
+            }
+
+            .features {
+                margin: 25px auto;
+                padding: 0 10px;
+            }
+
+            .feature-card {
+                padding: 18px 15px;
+            }
+
+            .feature-card h3 {
+                font-size: 1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+
+            .c1, .c2 {
+                display: none;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+                padding: 15px;
+            }
+        }
+
+        /* ===== RESPONSIVE - LANDSCAPE MOBILE ===== */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding-top: 20px;
+            }
+
+            .hero {
+                padding: 20px 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+
+            .hero-box {
+                padding: 20px 15px;
+                border-radius: 14px;
+            }
+
+            .hero button {
+                margin-top: 15px;
+                padding: 8px 25px;
+                font-size: 0.9rem;
+            }
+
+            .promo {
+                margin-top: 10px;
+            }
+
+            .promo span {
+                font-size: 0.75rem;
+                padding: 3px 8px;
+            }
+
+            .info-section {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .info-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .info-section p {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin: 20px auto;
+            }
+
+            .feature-card {
+                padding: 12px 8px;
+            }
+
+            .feature-card .icon {
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+
+            .feature-card h3 {
+                font-size: 0.85rem;
+            }
+
+            .feature-card p {
+                font-size: 0.75rem;
+                display: none;
+            }
+
+            .c1, .c2 {
+                display: none;
+            }
+        }
+
+        /* ===== RESPONSIVE - LARGE SCREENS ===== */
+        @media (min-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .hero-box {
+                padding: 50px 40px;
+                border-radius: 25px;
+            }
+
+            .info-section {
+                padding: 40px;
+                border-radius: 22px;
+            }
+
+            .info-section h2 {
+                font-size: 2rem;
+            }
+
+            .info-section p {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .circle {
+                display: none;
+            }
+
+            .hero-box {
+                box-shadow: none;
+                background: white;
+                border: 1px solid #ddd;
+            }
+
+            .hero button {
+                display: none;
+            }
+
+            .info-section {
+                background: white;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            .circle {
+                animation: none;
+            }
+
+            .hero-box {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .hero button {
+                transition: none;
+            }
+
+            .feature-card {
+                transition: none;
+            }
+        }
+
+        /* ===== DARK MODE PREFERENCE ===== */
+        @media (prefers-color-scheme: light) {
+            body {
+                background: linear-gradient(140deg, #f0f0f0, #e0e0e0, #d0d0d0);
+                color: #1a1a1a;
+            }
+
+            .hero-box {
+                background: rgba(0, 0, 0, 0.05);
+            }
+
+            .info-section {
+                background: rgba(0, 0, 0, 0.03);
+            }
+
+            .info-section p {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating circles (background effects) -->
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-box">
+            <h1>گام‌یار، مسیر آینده شما</h1>
+            <p>انتخاب هوشمندانه رشته و شغل</p>
+            <p>با راهنمایی گام‌یار، قدم اول را محکم بردارید.</p>
+            <a href="http://localhost:3000/main"><button>شروع کنید</button></a>
+            <br>
+            <a href="http://localhost:3000/document"><button>راهنما</button></a>
+            <div class="promo">
+                <span>🚀 مشاوره رایگان</span>
+                <span>🎯 اهداف شغلی</span>
+                <span>🤖 تحلیل هوشمند</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info-section">
+        <img src="/static/img/gamyar_job.png" alt="گام یار اینده شغلی و مشاور تحصیلی">
+        <h2>چرا گام‌یار؟</h2>
+        <p>
+            انتخاب مسیر تحصیلی و شغلی یکی از مهم‌ترین تصمیمات زندگی است. گام‌یار با بهره‌گیری از تحلیل‌های دقیق و داده‌های به‌روز، به شما کمک می‌کند تا با شناخت بهتر علایق و استعدادهایتان، بهترین انتخاب را داشته باشید.
+        </p>
+        <p>
+            ما اینجا هستیم تا این مسیر را برای شما شفاف‌تر، آسان‌تر و مطمئن‌تر کنیم. با گام‌یار، آینده‌ای روشن و پر از موفقیت بسازید.
+        </p>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="icon">🎯</div>
+            <h3>شناخت استعداد</h3>
+            <p>تست‌های دقیق برای شناسایی نقاط قوت شما</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📚</div>
+            <h3>راهنمای رشته</h3>
+            <p>معرفی بهترین رشته‌ها بر اساس علایق شما</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💼</div>
+            <h3>آینده شغلی</h3>
+            <p>پیش‌بینی بازار کار و فرصت‌های شغلی</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🤝</div>
+            <h3>مشاوره تخصصی</h3>
+            <p>پشتیبانی و راهنمایی در تمام مراحل</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© ۱۴۰۵ گام‌یار - تمامی حقوق محفوظ است</p>
+    </footer>
+</body>
+</html>
