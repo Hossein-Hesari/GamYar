@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستندات و راهنمای استفاده از گام‌یار</title>
+    <link rel="icon" href="/static/img/docIcon.png" type="image/png">
+    <style>
+        /* ===== RESET & BASE STYLE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.9;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+            padding: 40px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        /* ===== DOCUMENTATION CONTENT ===== */
+        .docs-section {
+            margin-bottom: 35px;
+        }
+
+        .docs-section h2 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+            padding-right: 10px;
+            border-right: 4px solid #3b82f6;
+        }
+
+        .docs-section p {
+            font-size: 1rem;
+            color: #475569;
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        /* ===== LINK STYLE ===== */
+        .site-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px dotted #3b82f6;
+            transition: color 0.2s;
+        }
+
+        .site-link:hover {
+            color: #1d4ed8;
+            border-bottom-style: solid;
+        }
+
+        /* ===== ALERT BOX ===== */
+        .alert-box {
+            background-color: #fff7ed;
+            border-right: 4px solid #ea580c;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .alert-box strong {
+            color: #c2410c;
+        }
+
+        /* ===== VIDEO EMBED BOX ===== */
+        .video-container {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .video-container h3 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== STEP LISTS ===== */
+        .steps-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .steps-list li::before {
+            content: "✦";
+            position: absolute;
+            right: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .docs-section h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>راهنمای گام‌ به‌ گام استفاده از گام‌یار</h1>
+            <p>مستندات کاربری جهت اتصال و شروع گفت‌وگو با هوش مصنوعی هدایت تحصیلی</p>
+        </header>
+
+        <section class="docs-section">
+            <h2>۱. ورود به سامانه و شروع فرآیند</h2>
+            <p>
+                برای شروع فرآیند انتخاب مسیر آینده، ابتدا از طریق دکمه زیر یا آدرس مشخص شده وارد <a href="http://localhost:3000/main" class="site-link" target="_blank">بخش اصلی سایت گام‌یار</a> شوید. 
+            </p>
+            <p>
+                پس از بارگذاری کامل صفحه، جهت برقراری ارتباط مستقیم با هوش مصنوعی مشاور، بر روی دکمه <strong>«شروع کنید»</strong> کلیک کنید تا به محیط هوشمند هدایت تحصیلی منتقل شوید.
+            </p>
+        </section>
+
+        <section class="docs-section">
+            <h2>۲. نحوه گفت‌وگو با هوش مصنوعی</h2>
+            <p>پس از ورود به بخش مشاوره هوشمند، لازم است مراحل زیر را به دقت دنبال کنید:</p>
+            
+            <ul class="steps-list">
+                <li><strong>انتخاب رشته‌های مدنظر:</strong> در وهله اول، رشته‌های تحصیلی که به آن‌ها فکر می‌کنید یا به آن‌ها علاقه نسبی دارید را مشخص کنید.</li>
+                <li><strong>نوشتن توضیحات تکمیلی:</strong> خلاقیت‌ها، مهارت‌ها و وضعیت تحصیلی فعلی خود را در بخش مربوطه بنویسید.</li>
+            </ul>
+
+            <div class="alert-box">
+                <strong>⚠️ توجه بسیار مهم (قانون گفت‌وگوی اول):</strong> 
+                در <u>اولین دفعه‌ی گفت‌وگو</u> با هوش مصنوعی، وارد کردن علایق، رشته‌ها و توضیحات تکمیلی **کاملاً الزامی است** تا سیستم بتواند پروفایل اولیه شما را آنالیز کند. در دفعات و مراحل بعدی گفت‌وگو، نیازی به ورود مجدد این اطلاعات نیست و مشکلی برای ادامه مکالمه وجود نخواهد داشت.
+            </div>
+        </section>
+
+        <div class="video-container">
+            <h3>توضیح ویدیویی</h3>
+            <div class="video-wrapper">
+                <div id="20512643843">
+                    <script type="text/JavaScript" src="https://www.aparat.com/embed/knjn231?data[rnddiv]=20512643843&data[responsive]=yes&titleShow=true"></script>
+                </div>
+            </div>
+        </div>
+
+        <section class="docs-section">
+            <h2>۳. چرا وارد کردن علایق در دفعه اول مهم است؟</h2>
+            <p>
+                هوش مصنوعی گام‌یار بر پایه داده‌های ورودی اولیه شما، مدل شخصیتی و استعدادی‌تان را کالیبره می‌کند. عدم ارسال توضیحات در پارت اول باعث می‌شود دستیار هوشمند، شناخت کافی از شما نداشته باشد. بنابراین با رعایت این نکته، دقیق‌ترین نقشه راه شغلی را دریافت خواهید کرد.
+            </p>
+        </section>
+
+        <footer>
+            <p>© ۱۴۰۵ گام‌یار - راهنمای سیستم هدایت تحصیلی هوشمند</p>
+        </footer>
+    </div>
+
+</body>
+</html>
